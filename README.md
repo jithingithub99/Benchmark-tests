@@ -69,7 +69,12 @@ Select pod name (for eg:fiopod)
 
 5) Login to client pod (iperclientpod) and run below tcp & UDP benchmark commands
 
-`iperf3 --client --interval 30 --parallel <NUM_THREADS> --time 30 --format M –json iperf3 --client -u --interval 30 --parallel <NUM_THREADS> --time 30 --format M –json`
+#### TCP test ####
+
+`iperf3 --client --interval 30 --parallel <NUM_THREADS> --time 30 --format M –json`
+#### UDP Test ####
+
+`iperf3 --client -u --interval 30 --parallel <NUM_THREADS> --time 30 --format M –json`
 
 where is IP address of iperfserverpod <NUM_THREADS> is no of CPU threads in the system
 
