@@ -8,7 +8,7 @@ Prerequisites for benchmark tests (CPU,MEMORY,IOPS,IPERF)
 
 3) Create it to local system under directory test & then export
 
-cd /test
+~cd /test~
 
 nano purestorage-kubeconfig
 
