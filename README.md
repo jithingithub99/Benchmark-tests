@@ -23,7 +23,7 @@ We can choose any of these 3 pods for performing benchmark test for CPU & Memory
 Run CPU benchmark test using sysbench
 1) Login to pod
 
-kex sh
+`kex sh`
 
 Select pod name (for eg:fiopod)
 
