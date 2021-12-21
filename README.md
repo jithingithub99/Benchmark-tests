@@ -8,7 +8,7 @@ Prerequisites for benchmark tests (CPU,MEMORY,IOPS,IPERF)
 
 3) Create it to local system under directory test & then export
 
-~ cd /test ~
+`cd /test`
 
 nano purestorage-kubeconfig
 
@@ -29,22 +29,22 @@ Select pod name (for eg:fiopod)
 
 2) Install sysbench tool
 
-apt install sysbench
+`apt install sysbench`
 
 3) Run below command to get CPU becnhmark
 
-sysbench cpu --cpu-max-prime=20000 --threads=2 --time=60 run
+`sysbench cpu --cpu-max-prime=20000 --threads=2 --time=60 run`
 
 Run Memory benchmark test using sysbench
 1) Login to pod
 
-kex sh
+`kex sh`
 
 Select pod name (for eg:fiopod)
 
 2) Install sysbench tool (ignore this step if we have already installed sysbench)
 
-apt install sysbench
+`apt install sysbench`
 
 sysbench memory --memory-oper=write --memory-block-size=1K --memory-scope=global --memory-total-size=10G --threads=2 --time=30 run
 
