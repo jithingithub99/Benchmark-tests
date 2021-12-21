@@ -94,22 +94,22 @@ where is IP address of iperfserverpod <NUM_THREADS> is no of CPU threads in the 
 3) Run below fio commands to get the random Read/Write IOPS,Random Read/Write bandwidth,random read/Write latency,fdatasync (99th percentile value)
 
 ### Read IOPS ###
-`fio --randrepeat=0 --verify=0 --ioengine=libaio --direct=1 --gtod_reduce=1 --name=read_iops --directory=/fiotest --bs=4K --iodepth=16 --fdatasync=0 --size=50G --readwrite=randread --time_based --ramp_time=10s --runtime=30s`
+`fio --randrepeat=0 --verify=0 --ioengine=libaio --direct=1 --gtod_reduce=1 --name=read_iops --directory=/abc --bs=4K --iodepth=16 --fdatasync=0 --size=50G --readwrite=randread --time_based --ramp_time=10s --runtime=30s`
 
 ### Write IOPS ###
-`fio --randrepeat=0 --verify=0 --ioengine=libaio --direct=1 --gtod_reduce=1 --name=write_iops --directory=/fiotest --bs=4K --iodepth=16 --fdatasync=0 --size=50G --readwrite=randwrite --time_based --ramp_time=10s --runtime=30s`
+`fio --randrepeat=0 --verify=0 --ioengine=libaio --direct=1 --gtod_reduce=1 --name=write_iops --directory=/abc --bs=4K --iodepth=16 --fdatasync=0 --size=50G --readwrite=randwrite --time_based --ramp_time=10s --runtime=30s`
 
 ### Read Bandwidth ###
-`fio --randrepeat=0 --verify=0 --ioengine=libaio --direct=1 --gtod_reduce=1 --name=read_bw --directory=/fiotest --bs=128K --iodepth=16 --fdatasync=0 --size=50G --readwrite=randread --time_based --ramp_time=10s --runtime=30s`
+`fio --randrepeat=0 --verify=0 --ioengine=libaio --direct=1 --gtod_reduce=1 --name=read_bw --directory=/abc --bs=128K --iodepth=16 --fdatasync=0 --size=50G --readwrite=randread --time_based --ramp_time=10s --runtime=30s`
 
 ### Write bandwidth ###
 
-`fio --randrepeat=0 --verify=0 --ioengine=libaio --direct=1 --gtod_reduce=1 --name=write_bw --directory=/fiotest --bs=128K --iodepth=16 --fdatasync=0 --size=50G --readwrite=randwrite --time_based --ramp_time=10s --runtime=30s`
+`fio --randrepeat=0 --verify=0 --ioengine=libaio --direct=1 --gtod_reduce=1 --name=write_bw --directory=/abc --bs=128K --iodepth=16 --fdatasync=0 --size=50G --readwrite=randwrite --time_based --ramp_time=10s --runtime=30s`
 
 ### Read latency ###
-`fio --randrepeat=0 --verify=0 --ioengine=libaio --direct=1 --name=read_latency --directory=/fiotest --bs=4K --iodepth=4 --size=50G --readwrite=randread --time_based --ramp_time=10s --runtime=30s`
+`fio --randrepeat=0 --verify=0 --ioengine=libaio --direct=1 --name=read_latency --directory=/abc --bs=4K --iodepth=4 --size=50G --readwrite=randread --time_based --ramp_time=10s --runtime=30s`
 
 ### write latency ###
-`fio --randrepeat=0 --verify=0 --ioengine=libaio --direct=1 --name=write_latency --directory=/fiotest --bs=4K --iodepth=4 --size=50G --readwrite=randwrite --time_based --ramp_time=10s --runtime=30s`
+`fio --randrepeat=0 --verify=0 --ioengine=libaio --direct=1 --name=write_latency --directory=/abc --bs=4K --iodepth=4 --size=50G --readwrite=randwrite --time_based --ramp_time=10s --runtime=30s`
 
 
