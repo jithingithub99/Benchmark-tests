@@ -76,7 +76,7 @@ where is IP address of iperfserverpod <NUM_THREADS> is no of CPU threads in the 
 #### Run FIO tests ####
 1) Login to pod where fiotests need to be performed
 
-`kex sh 
+`kex sh`
 
 (select fiopod)`
 
