@@ -1,7 +1,8 @@
 # Benchmark-tests
 This is the git for benchmark tests
 
-Prerequisites for benchmark tests (CPU,MEMORY,IOPS,IPERF)
+#### Prerequisites for benchmark tests (CPU,MEMORY,IOPS,IPERF) ####
+
 1) Connect vpn for Purestorage lab environment
 
 2) Get kubeconfig for pure storage lab environment
@@ -20,7 +21,8 @@ Create 3 pods
 
 We can choose any of these 3 pods for performing benchmark test for CPU & Memory
 
-Run CPU benchmark test using sysbench
+#### Run CPU benchmark test using sysbench ####
+
 1) Login to pod
 
 `kex sh`
@@ -35,7 +37,8 @@ Select pod name (for eg:fiopod)
 
 `sysbench cpu --cpu-max-prime=20000 --threads=2 --time=60 run`
 
-Run Memory benchmark test using sysbench
+#### Run Memory benchmark test using sysbench ####
+
 1) Login to pod
 
 `kex sh`
@@ -48,7 +51,8 @@ Select pod name (for eg:fiopod)
 
 `sysbench memory --memory-oper=write --memory-block-size=1K --memory-scope=global --memory-total-size=10G --threads=2 --time=30 run`
 
-RUN iperf test between 2 pods
+#### RUN iperf test between 2 pods ####
+
 1) Find out 2 running pods & get the ip address
 
 `kubectl get pods -o wide`
@@ -69,7 +73,7 @@ RUN iperf test between 2 pods
 
 where is IP address of iperfserverpod <NUM_THREADS> is no of CPU threads in the system
 
-Run FIO tests
+#### Run FIO tests ####
 1) Login to pod where fiotests need to be performed
 
 `kex sh 
@@ -84,23 +88,23 @@ Run FIO tests
 
 3) Run below fio commands to get the random Read/Write IOPS,Random Read/Write bandwidth,random read/Write latency,fdatasync (99th percentile value)
 
-Read IOPS
+### Read IOPS ###
 `fio --randrepeat=0 --verify=0 --ioengine=libaio --direct=1 --gtod_reduce=1 --name=read_iops --directory=/fiotest --bs=4K --iodepth=16 --fdatasync=0 --size=50G --readwrite=randread --time_based --ramp_time=10s --runtime=30s`
 
-Write IOPS
+### Write IOPS ###
 `fio --randrepeat=0 --verify=0 --ioengine=libaio --direct=1 --gtod_reduce=1 --name=write_iops --directory=/fiotest --bs=4K --iodepth=16 --fdatasync=0 --size=50G --readwrite=randwrite --time_based --ramp_time=10s --runtime=30s`
 
-READ Bandwidth
+### Read Bandwidth ###
 `fio --randrepeat=0 --verify=0 --ioengine=libaio --direct=1 --gtod_reduce=1 --name=read_bw --directory=/fiotest --bs=128K --iodepth=16 --fdatasync=0 --size=50G --readwrite=randread --time_based --ramp_time=10s --runtime=30s`
 
-Write bandwidth
+### Write bandwidth ###
 
 `fio --randrepeat=0 --verify=0 --ioengine=libaio --direct=1 --gtod_reduce=1 --name=write_bw --directory=/fiotest --bs=128K --iodepth=16 --fdatasync=0 --size=50G --readwrite=randwrite --time_based --ramp_time=10s --runtime=30s`
 
-Read latency
+### Read latency ###
 `fio --randrepeat=0 --verify=0 --ioengine=libaio --direct=1 --name=read_latency --directory=/fiotest --bs=4K --iodepth=4 --size=50G --readwrite=randread --time_based --ramp_time=10s --runtime=30s`
 
-write latency
+### write latency ###
 `fio --randrepeat=0 --verify=0 --ioengine=libaio --direct=1 --name=write_latency --directory=/fiotest --bs=4K --iodepth=4 --size=50G --readwrite=randwrite --time_based --ramp_time=10s --runtime=30s`
 
 
