@@ -71,12 +71,12 @@ Select pod name (for eg:fiopod)
 
 #### TCP test ####
 
-`iperf3 --client --interval 30 --parallel <NUM_THREADS> --time 30 --format M –json`
+`iperf3 --client <server pod IP> --interval 30 --parallel <NUM_THREADS> --time 30 --format M –json`
 #### UDP Test ####
 
-`iperf3 --client -u --interval 30 --parallel <NUM_THREADS> --time 30 --format M –json`
+`iperf3 --client <server pod IP>  -u --interval 30 --parallel <NUM_THREADS> --time 30 --format M –json`
 
-where is IP address of iperfserverpod <NUM_THREADS> is no of CPU threads in the system
+where <server pod IP> is IP address of iperfserverpod <NUM_THREADS> is no of CPU threads in the system
 
 #### Run FIO tests ####
 1) Login to pod where fiotests need to be performed
